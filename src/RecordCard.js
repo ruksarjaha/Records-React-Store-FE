@@ -1,7 +1,7 @@
 function RecordCard({ record, notify }) {
 
     function handleDelete() {
-        fetch('http://localhost:8080/records/${record.id}',
+        fetch(`http://localhost:8082/records/${record.id}`,
          {method: "DELETE"})
          .then(() => notify({action: "delete", record: record}))
          .catch(error => notify({ action: "delete", error: error}));

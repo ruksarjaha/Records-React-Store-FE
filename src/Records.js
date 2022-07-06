@@ -22,7 +22,7 @@ function Records() {
     function addClick() {
         const now = new Date();
         setScopedRecord({id:0, artist: "",album: "",
-         year: NetworkInformation.getFullYear()})
+         year: now.getFullYear()})
         setShowForm(true);
     }
 
@@ -42,6 +42,7 @@ function Records() {
                    }
                    return r;
                 }))
+                break;
             case "add":
                 setRecords([...records, record]);
                 break;
